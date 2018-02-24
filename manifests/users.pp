@@ -84,4 +84,17 @@ class workstation::users {
     source => 'puppet:///modules/workstation/xinitrc',
   }
 
+  vcsrepo { '/home/ed/.fzf':
+    ensure => 'present',
+    provider => 'git',
+    owner => 'ed',
+    group => 'ed',
+    source => 'https://github.com/junegunn/fzf.git',
+    user => 'ed',
+  } ->
+  exec { '/home/ed/.fzf/install --key-bindings --completion --update-rc':
+    cwd => '/home/ed',
+    creates => '/home/ed/.fzf.bash',
+  }
+
 }
