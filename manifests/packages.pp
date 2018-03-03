@@ -11,6 +11,7 @@ class workstation::packages {
     'csound',
     'rxvt-unicode',
     'jack',
+    'cmake',
   ]
 
   package {
