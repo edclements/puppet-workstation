@@ -111,4 +111,9 @@ class workstation::users {
     force    => true,
   }
 
+  class { 'bookingbug::studio':
+    user => 'ed',
+    group => 'ed',
+  }
+
 }

@@ -118,6 +118,7 @@ fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
+BB_SDK_SRC_DIR="/home/ed/src/bookingbug-angular"
 PATH="/usr/local/rbenv/bin:/usr/local/rbenv/shims:$PATH"
 export RBENV_ROOT='/usr/local/rbenv'
 eval "$(rbenv init -)"
