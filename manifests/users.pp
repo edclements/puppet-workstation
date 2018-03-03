@@ -90,4 +90,11 @@ class workstation::users {
     creates => '/home/ed/.fzf.bash',
   }
 
+  vcsrepo { '/home/ed/csound-instruments':
+    ensure   => present,
+    provider => git,
+    source   => 'http://github.com/edclements/csound-instruments.git',
+    force    => true,
+  }
+
 }
