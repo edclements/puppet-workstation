@@ -67,7 +67,7 @@ class workstation::users {
     path => '/home/ed/.gitconfig',
     owner => 'ed',
     group => 'ed',
-    content => template('workstation/gitconfig.erb'),
+    source => 'puppet:///modules/workstation/gitconfig',
   }
 
   file { '/home/ed/.Xresources':

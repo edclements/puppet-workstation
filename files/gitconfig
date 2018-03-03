@@ -1,3 +1,5 @@
 [user]
 	name = Ed Clements
 	email = ed.clements@gmail.com
+[alias]
+  trust = "!mkdir -p .git/safe"
