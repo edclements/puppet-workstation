@@ -77,6 +77,20 @@ class workstation::users {
     source => 'puppet:///modules/workstation/xinitrc',
   }
 
+  file { '/home/ed/.bashrc':
+    path => '/home/ed/.bashrc',
+    owner => 'ed',
+    group => 'ed',
+    source => 'puppet:///modules/workstation/bashrc',
+  }
+
+  file { '/home/ed/.bash_aliases':
+    path => '/home/ed/.bash_aliases',
+    owner => 'ed',
+    group => 'ed',
+    source => 'puppet:///modules/workstation/bash_aliases',
+  }
+
   vcsrepo { '/home/ed/.fzf':
     ensure => 'present',
     provider => 'git',
