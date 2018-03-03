@@ -31,11 +31,6 @@ class workstation::users {
     require => File['/home/ed'],
   }
 
-  exec {"check_ssh":
-    command => '/bin/true',
-    onlyif => '/usr/bin/test -e /home/ed/.ssh',
-  }
-
   vcsrepo { '/home/ed/src/vimfiles':
     ensure => 'present',
     provider => 'git',
@@ -43,13 +38,11 @@ class workstation::users {
     group => 'ed',
     source => 'git@github.com:edclements/vimfiles.git',
     user => 'ed',
-    require => Exec['check_ssh'],
   }
 
   file { '/home/ed/.vim':
     ensure => 'link',
     target => '/home/ed/src/vimfiles',
-    force => true,
     owner => 'ed',
     group => 'ed',
     require => Vcsrepo['/home/ed/src/vimfiles'],
