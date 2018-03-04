@@ -36,13 +36,15 @@
 # Copyright 2018 Your name here, unless otherwise noted.
 #
 class workstation(
-  $uid = 1000
+  $uid = 1050
 ) {
 
   contain workstation::packages
   contain workstation::users
+  contain workstation::x11
 
   Class['::workstation::packages']
   -> Class['::workstation::users']
+  -> Class['::workstation::x11']
 
 }

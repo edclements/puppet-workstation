@@ -1,4 +1,6 @@
-class workstation::users {
+class workstation::users(
+  $uid = $workstation::uid,
+) {
 
   file { '/home/ed':
     ensure => 'directory'
@@ -63,20 +65,6 @@ class workstation::users {
     source => 'puppet:///modules/workstation/gitconfig',
   }
 
-  file { '/home/ed/.Xresources':
-    path => '/home/ed/.Xresources',
-    owner => 'ed',
-    group => 'ed',
-    source => 'puppet:///modules/workstation/Xresources.dark',
-  }
-
-  file { '/home/ed/.xinitrc':
-    path => '/home/ed/.xinitrc',
-    owner => 'ed',
-    group => 'ed',
-    source => 'puppet:///modules/workstation/xinitrc',
-  }
-
   file { '/home/ed/.bashrc':
     path => '/home/ed/.bashrc',
     owner => 'ed',
@@ -111,9 +99,11 @@ class workstation::users {
     force    => true,
   }
 
+  /*
   class { 'bookingbug::studio':
     user => 'ed',
     group => 'ed',
   }
+  */
 
 }
