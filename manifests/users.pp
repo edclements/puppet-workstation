@@ -89,6 +89,9 @@ class workstation::users(
   } ->
   exec { '/home/ed/.fzf/install --key-bindings --completion --update-rc':
     cwd => '/home/ed',
+    user => 'ed',
+    group => 'ed',
+    environment => 'HOME=/home/ed',
     creates => '/home/ed/.fzf.bash',
   }
 
