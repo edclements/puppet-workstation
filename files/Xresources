@@ -2,7 +2,6 @@ Xft.antialias:  true
 Xft.hinting:    true
 Xft.rgba:       rgb
 Xft.hintstyle:  hintful
-Xft.dpi:        220
 xterm*faceName: Bitstream Vera Sans Mono:style=Roman:size=7:antialias=true
 
 #include ".Xresources.d/solarized"
