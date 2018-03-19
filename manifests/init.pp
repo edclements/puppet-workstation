@@ -42,9 +42,11 @@ class workstation(
   contain workstation::packages
   contain workstation::users
   contain workstation::x11
+  contain workstation::audio
 
   Class['::workstation::packages']
   -> Class['::workstation::users']
   -> Class['::workstation::x11']
+  -> Class['::workstation::audio']
 
 }
