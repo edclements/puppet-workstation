@@ -102,6 +102,13 @@ class workstation::users(
     force    => true,
   }
 
+  file { '/home/ed/.tmux.conf':
+    path => '/home/ed/.tmux.conf',
+    owner => 'ed',
+    group => 'ed',
+    source => 'puppet:///modules/workstation/tmux.conf',
+  }
+
   /*
   class { 'bookingbug::studio':
     user => 'ed',
