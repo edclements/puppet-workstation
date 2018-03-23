@@ -1,2 +1,5 @@
+setxkbmap gb
+wmname LG3D
+xscreensaver -no-splash &
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 exec dwm
